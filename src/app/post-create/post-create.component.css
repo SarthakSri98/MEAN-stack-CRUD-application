@@ -1,0 +1,23 @@
+mat-card{
+    width:80%;
+    margin:auto;
+}
+button{
+    margin-top:100px;
+}
+mat-form-field{
+    width:100%;
+}
+input[type="file"]
+{
+   visibility: hidden;
+}
+.imagePreview{
+    height:5rem;
+    width:6rem;
+    margin: 1rem 0;
+
+}
+.imagePreview img{
+    height:100%;
+}

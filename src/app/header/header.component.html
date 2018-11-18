@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    
+    <span class="message">
+       <a [routerLink]="['/']" class="mat-subheading-2"> Messages</a>
+    </span>
+    <span class="create" *ngIf="userIsAuthenticated">
+        <a [routerLink]="['/create']" class="mat-subheading-2">Create</a>
+    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="login" *ngIf="!userIsAuthenticated">
+        <a [routerLink]="['/login']" class="mat-subheading-2">Login</a>
+    </span>
+    <span class="signup" *ngIf="!userIsAuthenticated">
+        <a [routerLink]="['/signup']" class="mat-subheading-2">Signup</a>
+    </span>
+    <button class="mat-button logout" *ngIf="userIsAuthenticated" (click)="logout()">Log out</button>
+</mat-toolbar>

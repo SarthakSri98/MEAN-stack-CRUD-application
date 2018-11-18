@@ -1,0 +1,18 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div *ngIf="warriorArray.length>0 || !isLoading">
+<mat-accordion> 
+  <mat-expansion-panel *ngFor="let warrior of warriorArray">
+    
+  <mat-expansion-panel-header><img class='thumbnail' [src]='warrior.imagePath'>&nbsp;&nbsp;{{ warrior.heading }}</mat-expansion-panel-header>
+  <p class="mat-caption">{{ warrior.description }}</p>
+  <mat-action-row *ngIf="userIsAuthenticated && warrior.creator == userId">
+    <a [routerLink]="['/edit',warrior._id]" mat-button color="primary">Edit</a>
+    <button mat-button color="warn" (click)="onDelete(warrior._id)" >Delete</button>
+  </mat-action-row>
+  </mat-expansion-panel>
+ 
+
+</mat-accordion><br>
+<mat-paginator [length]='totalPosts' [pageSize]='postPerPage' [pageSizeOptions]='pageSizeArray' (page)="onPageChange($event)"></mat-paginator>
+</div>
+ <p *ngIf="warriorArray.length<=0">There has been no post added yet</p>

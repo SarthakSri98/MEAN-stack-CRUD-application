@@ -1,0 +1,29 @@
+.create{
+ position: relative;
+ left:82%;
+ border-right: 2px solid white;
+ padding-right:20px;
+}
+.login{
+    position: relative;
+    left:82%;
+    border-right: 2px solid white;
+    padding-right:20px;
+   }
+.signup{
+        position: relative;
+        left:83%;
+}   
+.logout{
+    position: relative;
+    left:80.6%;
+}   
+span a{
+    text-decoration: none;
+    color:white;
+}
+button{
+    outline:none;
+    background-color: transparent;
+    margin-top:6px;
+}

@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+<form  (submit)="onSubmit()" [formGroup]="userForm" *ngIf="!isLoading">
+<mat-form-field>
+<label for="input">Heading</label>
+<input 
+matInput 
+id="input" 
+type="text" 
+formControlName="heading" required>
+<!-- <mat-error *ngIf="heading.invalid">Please fill the heading</mat-error> -->
+</mat-form-field><br>
+<div>
+    <button mat-stroked-button type="button" (click)="pickPhoto.click()">Pick photo</button>
+    <input type="file" #pickPhoto (change)="onImagePicked($event)" >
+</div>
+<div *ngIf="userForm.value.image" class="imagePreview">
+   <img [src]="imagePreview" [alt]="userForm.value.heading" required>
+</div>
+<mat-form-field>
+<label for="input">Description</label>
+<textarea 
+matInput 
+rows="6" 
+formControlName="description" required></textarea>
+<!-- <mat-error *ngIf="description.invalid">Please fill the description</mat-error> -->
+</mat-form-field><br>
+
+<button type="submit" mat-raised-button color="accent">Save Post</button>
+</form>
+</mat-card>
